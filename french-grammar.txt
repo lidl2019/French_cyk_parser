@@ -1,0 +1,230 @@
+#French CFG grammar
+
+
+#French CFG:
+#====================================================================
+#S                   sentence/clause
+#NP                  noun phrase
+#VP                  verb phrase
+#N                   noun
+#PN                  proper noun
+#PR                  pronoun
+#Neg                 negatives
+#V                   verb
+#DT                  determiner
+#A                   adjective
+#1, 2, 3             first, second, third person
+#plr                 plural
+#sgl                 single
+#fem                 feminine
+#mas                 masculine
+#pre                 pre (before)
+#suf                 suffix (post)
+#====================================================================
+#Components:
+S -> PR-1-plr-sub VP-1-plr | PR-1-sgl-sub VP-1-sgl | PR-2-plr-sub VP-2-plr | PR-2-sgl-sub VP-2-sgl | PR-3-sgl-sub VP-3-sgl | PR-3-plr-sub VP-3-plr | NP-sgl VP-3-sgl | NP-plr VP-3-plr | NP
+
+NP -> NP-sgl | NP-plr
+
+VP -> VP-1-sgl | VP-1-plr | VP-2-sgl | VP-2-plr | VP-3-sgl | VP-3-plr
+
+N -> N-mas-sgl | N-mas-plr | N-fem-sgl | N-fem-plr
+
+V -> V-1-sgl | V-1-plr | V-2-sgl | V-2-plr | V-3-sgl | V-3-plr
+
+PR -> PR-obj | PR-sub
+PR-sub -> PR-1-sgl-sub | PR-1-plr-sub | PR-2-sgl-sub | PR-2-plr-sub | PR-3-sgl-sub | PR-3-plr-sub
+PR-obj -> PR-1-sgl-obj | PR-1-plr-obj | PR-2-sgl-obj | PR-2-plr-obj | PR-3-sgl-obj | PR-3-plr-obj
+
+DT -> DT-mas-sgl | DT-plr | DT-fem-sgl
+
+PN -> PN-mas-sgl-DT | PN-mas-sgl | PN-mas-plr-DT | PN-mas-plr | PN-fem-sgl-DT | PN-fem-sgl | PN-fem-plr-DT | PN-fem-plr
+
+A -> A-mas-sgl-pre | A-fem-sgl-pre | A-mas-sgl-suf | A-fem-sgl-suf | A-mas-plr-pre | A-fem-plr-pre | A-mas-plr-suf | A-fem-plr-suf
+
+#note: the adjectives that can become both pre and suf will be included in both categories
+
+#====================================================================
+#subject-verb agreement
+#S -> PR-2-sgl-sub VP-2-sgl | PR-3-sgl-sub VP-3-sgl | PR-1-plr-sub VP-1-plr | PR-1-sgl-sub VP-1-sgl | PR-2-plr-sub VP-2-plr | PR-3-sgl-sub VP-3-plr | NP-sgl VP-3-sgl | NP-plr VP-3-plr | NP
+
+#====================================================================
+#verb expansion
+#VP: VP-1-sgl; VP-1-plr; VP-2-sgl; VP-2-plr; VP-3-sgl; VP-3-plr
+#V: V-1-sgl; V-1-plr; V-2-sgl; V-2-plr; V-3-sgl; V-3-plr
+
+
+
+VP-1-sgl -> V-1-sgl | V-1-sgl NP-sgl | PR-1-sgl-obj V-1-sgl
+
+VP-2-sgl -> V-2-sgl | V-2-sgl NP-sgl | PR-2-sgl-obj V-2-sgl
+
+VP-3-sgl -> V-3-sgl | V-3-sgl NP-sgl | PR-3-sgl-obj V-3-sgl
+
+VP-1-sgl -> V-1-sgl | V-1-sgl NP-plr | PR-1-sgl-obj V-1-sgl
+
+VP-2-sgl -> V-2-sgl | V-2-sgl NP-plr | PR-2-sgl-obj V-2-sgl
+
+VP-3-sgl -> V-3-sgl | V-3-sgl NP-plr | PR-3-sgl-obj V-3-sgl
+
+
+VP-1-sgl -> V-1-sgl | V-1-sgl NP-sgl | PR-1-plr-obj V-1-sgl
+
+VP-2-sgl -> V-2-sgl | V-2-sgl NP-sgl | PR-2-plr-obj V-2-sgl
+
+VP-3-sgl -> V-3-sgl | V-3-sgl NP-sgl | PR-3-plr-obj V-3-sgl
+
+
+VP-1-sgl -> V-1-sgl | V-1-sgl NP-plr | PR-1-plr-obj V-1-sgl
+
+VP-2-sgl -> V-2-sgl | V-2-sgl NP-plr | PR-2-plr-obj V-2-sgl
+
+VP-3-sgl -> V-3-sgl | V-3-sgl NP-plr | PR-3-plr-obj V-3-sgl
+
+
+VP-1-plr -> V-1-plr | V-1-plr NP-plr | PR-1-sgl-obj V-1-plr
+
+VP-2-plr -> V-2-plr | V-2-plr NP-plr | PR-2-sgl-obj V-2-plr
+
+VP-3-plr -> V-3-plr | V-3-plr NP-plr | PR-3-sgl-obj V-3-plr
+
+VP-1-plr -> V-1-plr | V-1-plr NP-sgl | PR-1-sgl-obj V-1-plr
+
+VP-2-plr -> V-2-plr | V-2-plr NP-sgl | PR-2-sgl-obj V-2-plr
+
+VP-3-plr -> V-3-plr | V-3-plr NP-sgl | PR-3-sgl-obj V-3-plr
+
+
+VP-1-plr -> V-1-plr | V-1-plr NP-plr | PR-1-plr-obj V-1-plr
+
+VP-2-plr -> V-2-plr | V-2-plr NP-plr | PR-2-plr-obj V-2-plr
+
+VP-3-plr -> V-3-plr | V-3-plr NP-plr | PR-3-plr-obj V-3-plr
+
+VP-1-plr -> V-1-plr | V-1-plr NP-sgl | PR-1-plr-obj V-1-plr
+
+VP-2-plr -> V-2-plr | V-2-plr NP-sgl | PR-2-plr-obj V-2-plr
+
+VP-3-plr -> V-3-plr | V-3-plr NP-sgl | PR-3-plr-obj V-3-plr
+
+#====================================================================
+#verb negation
+#example: since Neg-pre and Neg-suf always appear in the same place,
+#         we can combine these non-terminals
+
+Neg-pre -> 'ne'
+Neg-suf -> 'pas'
+
+V-2-sgl -> Neg-pre V-2-sgl-Neg-suf
+V-2-sgl-Neg-suf -> V-2-sgl Neg-suf
+
+#thus:
+
+V-2-sgl -> Neg-pre V-2-sgl Neg-suf
+V-3-sgl -> Neg-pre V-3-sgl Neg-suf
+V-1-plr -> Neg-pre V-1-plr Neg-suf
+V-2-plr -> Neg-pre V-2-plr Neg-suf
+V-3-plr -> Neg-pre V-3-plr Neg-suf
+V-1-sgl -> Neg-pre V-1-sgl Neg-suf
+#====================================================================
+#noun phrase expansion
+
+#NP: NP-sgl; NP-plr
+#DT: DT-mas-sgl; DT-plr; DT-fem-sgl;
+#A:  A-mas-sgl-pre; A-fem-sgl-pre; A-mas-sgl-suf; A-fem-sgl-suf;
+#    A-mas-plr-pre; A-fem-plr-pre; A-mas-plr-suf; A-fem-plr-suf;
+#N:  N-mas-sgl; N-mas-plr; N-fem-sgl; N-fem-plr
+#PN:  PN-mas-sgl-DT; PN-mas-sgl; PN-mas-plr-DT; PN-mas-plr;
+#     PN-fem-sgl-DT; PN-fem-sgl; PN-fem-plr-DT; PN-fem-plr;
+
+NP -> NP-sgl | NP-plr
+
+NP-sgl -> DT-mas-sgl N-mas-sgl | DT-fem-sgl N-fem-sgl
+NP-sgl -> DT-mas-sgl A-mas-sgl-pre N-mas-sgl
+NP-sgl -> DT-fem-sgl A-fem-sgl-pre N-fem-sgl
+NP-sgl -> DT-mas-sgl N-mas-sgl A-mas-sgl-suf
+NP-sgl -> DT-fem-sgl N-fem-sgl A-fem-sgl-suf
+NP-sgl -> DT-mas-sgl PN-mas-sgl-DT
+NP-sgl -> DT-fem-sgl PN-fem-sgl-DT
+NP-sgl -> DT-mas-sgl A-mas-sgl-pre PN-mas-sgl-DT
+NP-sgl -> DT-fem-sgl A-fem-sgl-pre PN-fem-sgl-DT
+NP-sgl -> DT-mas-sgl PN-mas-sgl-DT A-mas-sgl-suf
+NP-sgl -> DT-fem-sgl PN-fem-sgl-DT A-fem-sgl-suf
+NP-sgl -> PN-mas-sgl
+NP-sgl -> PN-fem-sgl
+NP-sgl -> A-mas-sgl-pre PN-mas-sgl
+NP-sgl -> A-fem-sgl-pre PN-fem-sgl
+NP-sgl -> PN-mas-sgl A-mas-sgl-suf
+NP-sgl -> PN-fem-sgl A-fem-sgl-suf
+
+NP-plr -> DT-plr N-mas-plr
+NP-plr -> DT-plr N-fem-plr
+NP-plr -> DT-plr A-mas-plr-pre N-mas-plr
+NP-plr -> DT-plr A-fem-plr-pre N-fem-plr
+NP-plr -> DT-plr N-mas-plr A-mas-plr-suf
+NP-plr -> DT-plr N-fem-plr A-fem-plr-suf
+NP-plr -> DT-plr PN-mas-plr-DT
+NP-plr -> DT-plr PN-fem-plr-DT
+NP-plr -> DT-plr A-mas-plr-pre PN-mas-plr-DT
+NP-plr -> DT-plr A-fem-plr-pre PN-fem-plr-DT
+NP-plr -> DT-plr PN-mas-plr-DT A-mas-plr-suf
+NP-plr -> DT-plr PN-fem-plr-DT A-mas-plr-suf
+NP-plr -> PN-mas-plr
+NP-plr -> PN-fem-plr
+NP-plr -> A-mas-plr-pre PN-mas-plr
+NP-plr -> A-fem-plr-pre PN-fem-plr
+NP-plr -> PN-mas-plr A-mas-plr-suf
+NP-plr -> PN-fem-plr A-fem-plr-suf
+
+#====================================================================
+#non-terminals to terminals
+
+A-mas-sgl-suf -> 'noir' | 'heureux' | 'dernier'
+A-fem-sgl-suf -> 'noire' | 'derniere'
+A-mas-plr-suf -> 'noirs' | 'heureux' | 'derniers'
+A-fem-plr-suf -> 'noires' | 'heureuses' | 'dernieres'
+A-mas-sgl-pre -> 'beau' | 'joli'| 'drenier' | 'petit'
+A-fem-sgl-pre -> 'derniere' | 'petite'
+A-mas-plr-pre -> 'derniers' | 'petits'
+A-fem-plr-pre -> 'petites' | 'dernieres'
+
+V-1-sgl -> 'regarde' | 'mange' | 'aime' | 'cherche'
+V-1-plr -> 'regardons' | 'aimons' | 'cherchons'
+V-2-sgl -> 'regardes' | 'manges' | 'es' | 'cherches'
+V-2-plr -> 'regardez' | 'aimez' | 'mangez'
+V-3-sgl -> 'mange' | 'regarde' | 'aime'
+V-3-plr -> 'regardent' | 'aiment' | 'mangent'
+
+DT-mas-sgl -> 'le'
+DT-plr -> 'les'
+DT-fem-sgl -> 'la'
+
+PR-1-sgl-obj -> 'me'
+PR-1-plr-obj -> 'nous'
+PR-2-sgl-obj -> 'te'
+PR-2-plr-obj -> 'vous'
+PR-3-sgl-obj -> 'le' | 'la'
+PR-3-plr-obj -> 'les'
+
+PR-1-sgl-sub -> 'je'
+PR-1-plr-sub -> 'nous'
+PR-2-sgl-sub -> 'tu'
+PR-2-plr-sub -> 'vous'
+PR-3-sgl-sub -> 'il' | 'elle' | 'on'
+PR-3-plr-sub -> 'ils' | 'elles'
+
+N-mas-sgl -> 'chat' | 'poisson' | 'canadien'
+N-mas-plr -> 'chats' | 'poissons' | 'canadiens'
+N-fem-sgl -> 'television' | 'semaine' | 'aide'
+N-fem-plr -> 'televisions' | 'semaines' | 'aides'
+
+PN-mas-sgl-DT -> 'canada'
+PN-fem-sgl-DT -> 'angleterre'
+PN-mas-plr-DT ->  'etats-unis'
+PN-fem-plr-DT ->  'pyramides'
+PN-mas-sgl -> 'montreal' | 'jonathan'
+PN-fem-sgl ->  'montreal' | 'alice'
+#PN-mas-plr ->
+PN-fem-plr -> 'paques'
+
+

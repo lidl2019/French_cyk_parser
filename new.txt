@@ -1,0 +1,14 @@
+S -> VP NP
+# VP -> 'eat' NP
+VP -> X0 NP
+X0 -> 'eat'
+VP -> V V1 V2 NP PP PP
+V1 -> 'noodles'
+V2 -> 'with'
+V -> B
+B -> C
+NP -> C E
+C -> D
+D -> E
+B -> E
+E -> 'e'
